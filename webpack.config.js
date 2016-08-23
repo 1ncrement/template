@@ -1,8 +1,12 @@
 /**
  * Created by increment on 06.08.16.
  */
-var path = require('path'),
+let path = require('path'),
 	webpack = require('webpack');
+
+let devFlagPlugin = new webpack.DefinePlugin({
+	__DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
+});
 
 module.exports = {
 	devtool: 'cheap-module-eval-source-map',
@@ -19,7 +23,8 @@ module.exports = {
 	},
 	plugins: [
 		new webpack.optimize.OccurenceOrderPlugin(),
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		devFlagPlugin
 	],
 	module: {
 		loaders: [

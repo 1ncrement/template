@@ -1,7 +1,7 @@
 /**
  * Created by increment on 23.08.16.
  */
-var express = require('express'),
+let express = require('express'),
 	path = require('path'),
 	router = express.Router(),
 	todoCtrl = require('../controllers/main-ctrl');
