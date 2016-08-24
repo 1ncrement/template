@@ -7,27 +7,14 @@ import './../scss/index.scss'
 import {Provider} from 'react-redux'
 import App from './containers/App'
 
-import {combineReducers, createStore} from 'redux'
+import configureStore from './store/configureStore'
 
-const reducer = (state={}, action)=>{
-	switch(action.type){
-		case 'INC':
-			return state+action.payload;
-		case 'DEC':
-			return state-action.payload;
-		default:
-			return state;
-	}
-};
-
-const store = createStore(reducer, 0);
-
-store.subscribe(()=>{
-	console.log('store changed', store.getState());
-});
+const store = configureStore();
 
 render(
-	<App store={store} />
+	<Provider store={store} >
+		<App />
+	</Provider>
 	,
 	document.getElementById('root')
 );

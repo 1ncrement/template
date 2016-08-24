@@ -2,18 +2,29 @@
  * Created by increment on 23.08.16.
  */
 import React, {Component} from 'react'
-import RegForm from '../components/RegForm'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+import * as actions from '../actions/profilActions'
 
-export default class App extends Component {
-	constructor(props){
-		super(props);
-		this.state = this.props;
-	}
+import Profil from '../components/Profile'
+
+class App extends Component {
 	render(){
 		return(
 			<div>
-				<RegForm />
+				<Profil />
 			</div>
 		)
 	}
 }
+
+export default connect(
+	({profilReducer}) => {
+		return {profilReducer}
+	},
+	dispatch => {
+		return {
+			actions: bindActionCreators(actions, dispatch)
+		}
+	}
+)(App)
