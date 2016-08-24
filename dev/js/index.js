@@ -7,14 +7,14 @@ import './../scss/index.scss'
 import {Provider} from 'react-redux'
 import App from './containers/App'
 
-import {createStore} from 'redux'
+import {combineReducers, createStore} from 'redux'
 
-const reducer = (state, action)=>{
+const reducer = (state={}, action)=>{
 	switch(action.type){
 		case 'INC':
-			return state+action.number;
+			return state+action.payload;
 		case 'DEC':
-			return state-action.number;
+			return state-action.payload;
 		default:
 			return state;
 	}

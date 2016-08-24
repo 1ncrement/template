@@ -2,6 +2,7 @@
  * Created by increment on 23.08.16.
  */
 import React, {Component} from 'react'
+import RegForm from '../components/RegForm'
 
 export default class App extends Component {
 	constructor(props){
@@ -11,19 +12,8 @@ export default class App extends Component {
 	render(){
 		return(
 			<div>
-				<a className="btn" onClick={this.actionINC.bind(this)}>INC</a>
-				{'  '}
-				<a className="btn" onClick={this.actionDEC.bind(this)}>DEC</a>
+				<RegForm />
 			</div>
 		)
-	}
-
-	actionINC(e){
-		e.preventDefault();
-		this.state.store.dispatch({type: "INC", number: 1});
-	}
-	actionDEC(e){
-		e.preventDefault();
-		this.state.store.dispatch({type: "DEC", number: 1});
 	}
 }

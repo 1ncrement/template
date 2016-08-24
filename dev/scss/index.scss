@@ -13,3 +13,15 @@ div{
 	border-radius: 3px;
 	padding: 2px 4px;
 }
+.registration-form{
+	width: 240px;
+	margin: 0 auto;
+	& > input{
+		width: 100%;
+		background-color: #f4f4f4;
+		margin: 5px 0;
+	}
+	& > button{
+		float: right;
+	}
+}
