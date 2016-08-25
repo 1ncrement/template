@@ -1,7 +1,7 @@
 /**
  * Created by increment on 06.08.16.
  */
-var path = require('path'),
+let path = require('path'),
 	webpack = require('webpack');
 
 module.exports = {

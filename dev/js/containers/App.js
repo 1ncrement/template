@@ -18,15 +18,3 @@ export default class App extends Component {
 		)
 	}
 }
-
-/*
-connect(
-	({profilReducer}) => {
-		return {profilReducer}
-	},
-	dispatch => {
-		return {
-			actions: bindActionCreators(actions, dispatch)
-		}
-	}
-)(App)*/

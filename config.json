@@ -3,7 +3,7 @@
 		"port":3000
 	},
 	"mongoose": {
-		"uri": "mongodb://localhost/test",
+		"uri": "mongodb://localhost/template",
 		"options": {
 			"server": {
 				"socketOptions": {

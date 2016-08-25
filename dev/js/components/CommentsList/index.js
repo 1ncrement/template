@@ -5,6 +5,7 @@ import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import * as actions from '../../actions/commentsListActions'
+import moment from 'moment'
 
 class CommentsList extends Component {
 	render() {
@@ -19,11 +20,10 @@ class CommentsList extends Component {
 					{
 						this.props.comentsListReducer.coments.map((el)=> {
 							return (
-								<li key={`${el.id}|${el.date.format('LLLL')}`}>
-									<span className="coment-id">{el.id} </span>
-									{el.text}
-									<span className="coment-date">{el.date.format('MMM Do YY')} </span>
-									<a className="coment-remove" data-elId={el.id} onClick={this.removeComent.bind(this)}>x</a>
+								<li key={`${el._id}`}>
+									<span className="coment-text">{el.text}</span>
+									<span className="coment-date">{moment(el.date).startOf('min').fromNow()} </span>
+									<a className="coment-remove" data-elId={el._id} onClick={this.removeComent.bind(this)}>x</a>
 								</li>
 							)
 						})
@@ -31,6 +31,10 @@ class CommentsList extends Component {
 				</ul>
 			</div>
 		)
+	}
+
+	componentWillMount(){
+		this.props.actions.commentsGetAll();
 	}
 
 	addComent(e) {
@@ -45,7 +49,7 @@ class CommentsList extends Component {
 	}
 
 	doAction(text){
-		this.props.actions.commentsList(text);
+		this.props.actions.commentsAddNew(text);
 		this.refs.coment.value = '';
 	}
 
