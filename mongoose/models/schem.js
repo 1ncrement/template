@@ -1,9 +1,9 @@
-let mg = require('../index');
+var mg = require('../index');
 
-let Schema = new mg.Schema({
+var Schema = new mg.Schema({
 	name: {type: String}
 });
 
-let DB = mg.model('Schems', Schema);
+var DB = mg.model('Schems', Schema);
 
 module.exports = DB;

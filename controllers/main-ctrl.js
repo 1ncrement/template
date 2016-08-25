@@ -1,7 +1,7 @@
 /**
  * Created by increment on 23.08.16.
  */
-let o = {},
+var o = {},
 	Schema = require('../mongoose/models/schem'),
 	statusErrors = require('status-errors');
 

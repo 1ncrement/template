@@ -1,15 +1,12 @@
 /**
  * Created by increment on 06.08.16.
  */
-let path = require('path'),
+var path = require('path'),
 	webpack = require('webpack');
 
-let devFlagPlugin = new webpack.DefinePlugin({
-	__DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
-});
-
 module.exports = {
-	devtool: 'cheap-module-eval-source-map',
+	// devtool: 'cheap-module-eval-source-map',
+	devtool: '',
 	entry: [
 		'webpack-hot-middleware/client',
 		'whatwg-fetch',
@@ -24,7 +21,9 @@ module.exports = {
 	plugins: [
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
-		devFlagPlugin
+		new webpack.DefinePlugin({
+			__DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
+		})
 	],
 	module: {
 		loaders: [

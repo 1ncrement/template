@@ -3,9 +3,43 @@ body {
 	color: #555;
 }
 
-div{
-	text-align: center;
+.comments{
+	p{
+		margin-top: 7px;
+		margin-bottom: 7px;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 400px;
+		&>li{
+			margin-left: 10px;
+			&>span.coment-id{
+				color: #ccc;
+			}
+			&>span.coment-date{
+				color: #cccccc;
+				font-size: .8em;
+				padding-left: 20px;
+			}
+			&>.coment-remove{
+				cursor: pointer;
+				padding-left: 10px;
+				float: right;
+				-webkit-transition: color .2s;
+				-moz-transition: color .2s;
+				-ms-transition: color .2s;
+				-o-transition: color .2s;
+				transition: color .2s;
+				&:hover{
+					color: #cccccc;
+				}
+			}
+		}
+	}
 }
+
 .btn {
 	background-color: #91f3ff;
 	color: #f9f9f9;
@@ -13,15 +47,16 @@ div{
 	border-radius: 3px;
 	padding: 2px 4px;
 }
-.registration-form{
+
+.registration-form {
 	width: 240px;
 	margin: 0 auto;
-	& > input{
+	& > input {
 		width: 100%;
 		background-color: #f4f4f4;
 		margin: 5px 0;
 	}
-	& > button{
+	& > button {
 		float: right;
 	}
 }

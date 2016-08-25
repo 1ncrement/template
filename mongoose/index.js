@@ -1,4 +1,4 @@
-let mg = require('mongoose'),
+var mg = require('mongoose'),
 	path = require('path'),
 	config = require('../config');
 

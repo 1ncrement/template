@@ -7,18 +7,20 @@ import {connect} from 'react-redux'
 import * as actions from '../actions/profilActions'
 
 import Profil from '../components/Profile'
+import CommentsList from '../components/CommentsList'
 
-class App extends Component {
+export default class App extends Component {
 	render(){
 		return(
 			<div>
-				<Profil />
+				<CommentsList />
 			</div>
 		)
 	}
 }
 
-export default connect(
+/*
+connect(
 	({profilReducer}) => {
 		return {profilReducer}
 	},
@@ -27,4 +29,4 @@ export default connect(
 			actions: bindActionCreators(actions, dispatch)
 		}
 	}
-)(App)
+)(App)*/
