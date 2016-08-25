@@ -11,7 +11,7 @@ class CommentsList extends Component {
 	render() {
 		return (
 			<div className="comments">
-				<input type="text" ref="coment" placeholder="You're coment." onKeyDown={this.submitComent.bind(this)} />
+				<input autoFocus type="text" ref="coment" placeholder="You're coment." onKeyDown={this.submitComent.bind(this)} />
 				<button onClick={this.addComent.bind(this)}>Отправить</button>
 				<p>
 					Coments:
