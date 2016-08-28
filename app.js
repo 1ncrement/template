@@ -1,7 +1,7 @@
 /**
  * Created by increment on 23.08.16.
  */
-let webpack = require('webpack'),
+var webpack = require('webpack'),
 	webpackDevMiddleware = require('webpack-dev-middleware'),
 	webpackHotMiddleware = require('webpack-hot-middleware'),
 	config = require('./webpack.config'),
@@ -9,13 +9,13 @@ let webpack = require('webpack'),
 	bodyParser = require('body-parser'),
 	configServer = require('./config');
 
-let app = new (require('express'))();
+var app = new (require('express'))();
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-let compiler = webpack(config);
+var compiler = webpack(config);
 app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
 app.use(webpackHotMiddleware(compiler));
 

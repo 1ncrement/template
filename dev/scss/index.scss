@@ -2,6 +2,17 @@ body {
 	background-color: #f9f9f9;
 	color: #555;
 }
+div.container{
+	width: 980px;
+	margin: 0 auto;
+}
+ul.nav{
+	list-style: none;
+	&>li{
+		display: inline-block;
+		margin: 5px 10px;
+	}
+}
 
 .comments{
 	p{
